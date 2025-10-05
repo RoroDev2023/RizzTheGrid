@@ -1,0 +1,2 @@
+state,device_kwh_total,pmax_kw,window_start,window_end,emissions_opt_kg,emissions_even_kg,emissions_now_kg,saved_vs_even_kg,saved_vs_now_kg,fossil_share_opt,fossil_share_even,fossil_share_now,social_cost_saved_usd
+Florida,280.0,7.0,00:00,23:59,39.019,67.859,39.019,28.84,0.0,89.56,89.56,89.56,1.47

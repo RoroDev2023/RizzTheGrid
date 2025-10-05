@@ -1,0 +1,9 @@
+{
+  "state": "New York",
+  "respondent": "NYIS",
+  "files": {
+    "fuel": "/Users/maniksharma/Desktop/HACK HARVARD/eco-charge/predicted_data/state_forecast/New York/hourly_fuel_forecast_14d.csv",
+    "summary": "/Users/maniksharma/Desktop/HACK HARVARD/eco-charge/predicted_data/state_forecast/New York/hourly_summary_14d.csv"
+  },
+  "generated_utc": "2025-10-05T00:50:12Z"
+}

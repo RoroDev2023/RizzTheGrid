@@ -1,0 +1,2 @@
+state,device_kwh_total,pmax_kw,window_start,window_end,emissions_opt_kg,emissions_even_kg,emissions_now_kg,saved_vs_even_kg,saved_vs_now_kg,fossil_share_opt,fossil_share_even,fossil_share_now,social_cost_saved_usd
+Minnesota,280.0,7.0,00:00,23:59,28.558,49.665,28.558,21.108,0.0,66.27,66.27,66.27,1.08

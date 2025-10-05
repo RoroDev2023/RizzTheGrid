@@ -1,0 +1,2 @@
+state,device_kwh_total,pmax_kw,window_start,window_end,emissions_opt_kg,emissions_even_kg,emissions_now_kg,saved_vs_even_kg,saved_vs_now_kg,fossil_share_opt,fossil_share_even,fossil_share_now,social_cost_saved_usd
+Alabama,280.0,7.0,00:00,23:59,29.053,50.527,29.053,21.474,0.0,67.77,67.77,67.77,1.1

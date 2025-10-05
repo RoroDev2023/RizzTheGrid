@@ -1,0 +1,9 @@
+{
+  "state": "Ohio",
+  "respondent": "PJM",
+  "files": {
+    "fuel": "/Users/maniksharma/Desktop/HACK HARVARD/eco-charge/predicted_data/state_forecast/Ohio/hourly_fuel_forecast_14d.csv",
+    "summary": "/Users/maniksharma/Desktop/HACK HARVARD/eco-charge/predicted_data/state_forecast/Ohio/hourly_summary_14d.csv"
+  },
+  "generated_utc": "2025-10-05T02:17:27Z"
+}

@@ -1,0 +1,2 @@
+state,device_kwh_total,pmax_kw,window_start,window_end,emissions_opt_kg,emissions_even_kg,emissions_now_kg,saved_vs_even_kg,saved_vs_now_kg,fossil_share_opt,fossil_share_even,fossil_share_now,social_cost_saved_usd
+Kansas,280.0,7.0,00:00,23:59,28.74,49.982,28.74,21.242,0.0,61.09,61.09,61.09,1.08

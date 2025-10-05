@@ -1,0 +1,9 @@
+{
+  "state": "Hawaii",
+  "respondent": "US48",
+  "files": {
+    "fuel": "/Users/maniksharma/Desktop/HACK HARVARD/eco-charge/predicted_data/state_forecast/Hawaii/hourly_fuel_forecast_14d.csv",
+    "summary": "/Users/maniksharma/Desktop/HACK HARVARD/eco-charge/predicted_data/state_forecast/Hawaii/hourly_summary_14d.csv"
+  },
+  "generated_utc": "2025-10-05T01:35:13Z"
+}

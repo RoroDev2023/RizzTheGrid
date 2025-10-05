@@ -1,0 +1,9 @@
+{
+  "state": "Kentucky",
+  "respondent": "US48",
+  "files": {
+    "fuel": "/Users/maniksharma/Desktop/HACK HARVARD/eco-charge/predicted_data/state_forecast/Kentucky/hourly_fuel_forecast_14d.csv",
+    "summary": "/Users/maniksharma/Desktop/HACK HARVARD/eco-charge/predicted_data/state_forecast/Kentucky/hourly_summary_14d.csv"
+  },
+  "generated_utc": "2025-10-05T01:45:15Z"
+}

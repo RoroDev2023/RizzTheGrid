@@ -1,0 +1,91 @@
+# =========================
+# Root .gitignore (monorepo)
+# =========================
+
+# -------- OS / editors --------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# -------- Env & secrets (root + all subfolders) --------
+.env
+.env.*
+**/.env
+**/.env.*
+
+# =========================
+# Frontend: rizzthegrid (Vite/React + Node)
+# =========================
+rizzthegrid/node_modules/
+rizzthegrid/dist/
+rizzthegrid/build/
+rizzthegrid/.cache/
+rizzthegrid/.parcel-cache/
+rizzthegrid/.vite/
+rizzthegrid/coverage/
+rizzthegrid/npm-debug.log*
+rizzthegrid/yarn-error.log*
+rizzthegrid/pnpm-debug.log*
+
+# If you commit a lockfile, comment the one you use *in* and keep others ignored
+# rizzthegrid/package-lock.json
+# rizzthegrid/yarn.lock
+# rizzthegrid/pnpm-lock.yaml
+
+# =========================
+# Backend: eco-charge (Python/ML)
+# =========================
+eco-charge/.venv/
+eco-charge/venv/
+eco-charge/**/__pycache__/
+eco-charge/**/.ipynb_checkpoints/
+eco-charge/**/.mypy_cache/
+eco-charge/**/.pytest_cache/
+eco-charge/**/.ruff_cache/
+eco-charge/**/.coverage
+eco-charge/**/htmlcov/
+eco-charge/**/*.pyc
+eco-charge/**/*.pyo
+eco-charge/.python-version
+
+# ML artifacts / data (keep out of Git; use LFS if needed)
+eco-charge/runs/
+eco-charge/pipeline/__pycache__/
+eco-charge/predicted_data/
+eco-charge/json_data/
+eco-charge/EV-charge-optimization/**/outputs/
+eco-charge/EV-charge-optimization/**/logs/
+eco-charge/EV-charge-optimization/**/checkpoints/
+eco-charge/models/
+eco-charge/outputs/
+eco-charge/logs/
+
+# Large model/data file types
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+*.onnx
+*.h5
+*.npz
+*.npy
+*.pkl
+*.pickle
+*.joblib
+*.tar
+*.zip
+
+# =========================
+# General Docker / misc
+# =========================
+**/.docker/
+**/docker-data/
+*.log
+
+# Keep helpful docs/examples
+!**/README.md
+!**/AGENTS.md
