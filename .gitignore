@@ -17,23 +17,24 @@ Thumbs.db
 **/.env.*
 
 # =========================
-# Frontend: rizzthegrid (Vite/React + Node)
+# Frontend apps (Vite/React + Node)
 # =========================
-rizzthegrid/node_modules/
-rizzthegrid/dist/
-rizzthegrid/build/
-rizzthegrid/.cache/
-rizzthegrid/.parcel-cache/
-rizzthegrid/.vite/
-rizzthegrid/coverage/
-rizzthegrid/npm-debug.log*
-rizzthegrid/yarn-error.log*
-rizzthegrid/pnpm-debug.log*
+node_modules/
+**/node_modules/
+dist/
+build/
+.cache/
+.parcel-cache/
+.vite/
+coverage/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
 # If you commit a lockfile, comment the one you use *in* and keep others ignored
-# rizzthegrid/package-lock.json
-# rizzthegrid/yarn.lock
-# rizzthegrid/pnpm-lock.yaml
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
 
 # =========================
 # Backend: eco-charge (Python/ML)
