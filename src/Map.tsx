@@ -285,27 +285,6 @@ export default function USInteractiveMap() {
   }, []);
 
   // Optional fuel mix (not required by planner anymore, but cheap to keep)
-  const [fuelMixMap, setFuelMixMap] = useState<Record<string, FuelRow>>({});
-  useEffect(() => {
-    let cancelled = false;
-    (async () => {
-      try {
-        const resp = await fetch(fuelMixCsvUrl);
-        const txt = await resp.text();
-        const rows = parseCSV(txt) as FuelRow[];
-        const map: Record<string, FuelRow> = {};
-        for (const r of rows) {
-          const key = r.state ? normalizeStateName(r.state) : "";
-          if (key) map[key] = r;
-        }
-        if (!cancelled) setFuelMixMap(map);
-      } catch {
-        if (!cancelled) setFuelMixMap({});
-      }
-    })();
-    return () => { cancelled = true; };
-  }, []);
-
   useEffect(() => {
     let aborted = false;
     fetch("https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json")
