@@ -20,7 +20,6 @@ import type {
 
 // CSV assets
 import stateCsvUrl from "./data/energy_weighted_reduction_oct1_state.csv?url";
-import fuelMixCsvUrl from "./data/statewide_fuel_breakdown.csv?url";
 
 // ---------- AUTO-LOAD STATE IMAGES (Vite) ----------
 const allStateImages = import.meta.glob(
@@ -220,26 +219,6 @@ type StateRow = {
   co2_cost_saved_usd?: string;
   [k: string]: string | undefined;
 };
-
-// Optional fuel-mix types (left in case you reuse them somewhere else)
-type FuelRow = {
-  state?: string;
-  coal?: string;
-  natural_gas?: string | "natural gas";
-  petroleum?: string;
-  nuclear?: string;
-  hydro?: string | "hydroelectric";
-  wind?: string;
-  solar?: string;
-  geothermal?: string;
-  biomass?: string;
-  other?: string;
-  total?: string;
-  [k: string]: string | undefined;
-};
-
-
-
 
 export default function USInteractiveMap() {
   const { ref, width, height } = useSize<HTMLDivElement>();
