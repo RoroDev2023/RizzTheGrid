@@ -186,7 +186,6 @@ async function downscaleToJpegDataUrl(
 
   if (bitmap) {
     ctx.drawImage(bitmap, 0, 0, tw, th);
-    // @ts-ignore - .close may not exist in some browsers
     if ((bitmap as any).close) (bitmap as any).close();
   } else {
     const img = await loadImageFromBlob(srcBlob);
@@ -239,55 +238,8 @@ type FuelRow = {
   [k: string]: string | undefined;
 };
 
-type BaselineMix = {
-  solar: number;
-  wind: number;
-  hydro: number;
-  nuclear: number;
-  fossil: number;
-  otherRenewables: number;
-  other: number;
-};
 
-function pick(row: FuelRow, keys: string[]): number {
-  for (const k of keys) {
-    const v = row[k as keyof FuelRow];
-    const n = Number(String(v ?? "").replace(/[$,%\s]/g, ""));
-    if (Number.isFinite(n)) return n;
-  }
-  return 0;
-}
 
-function computeBaselineMix(row?: FuelRow): BaselineMix | null {
-  if (!row) return null;
-  const coal = pick(row, ["coal"]);
-  const gas = pick(row, ["natural_gas", "natural gas", "gas"]);
-  const pet = pick(row, ["petroleum", "oil"]);
-  const nuclear = pick(row, ["nuclear"]);
-  const hydro = pick(row, ["hydro", "hydroelectric"]);
-  const wind = pick(row, ["wind"]);
-  const solar = pick(row, ["solar"]);
-  const geo = pick(row, ["geothermal"]);
-  const biomass = pick(row, ["biomass"]);
-  const other = pick(row, ["other"]);
-  let total = pick(row, ["total"]);
-  const sumKnown = coal + gas + pet + nuclear + hydro + wind + solar + geo + biomass + other;
-  if (!total || total <= 0) total = sumKnown;
-  if (!total || total <= 0) return null;
-
-  const toShare = (x: number) => Math.max(0, x / total);
-  const fossil = toShare(coal + gas + pet);
-  const otherRen = toShare(geo + biomass);
-  return {
-    solar: toShare(solar),
-    wind: toShare(wind),
-    hydro: toShare(hydro),
-    nuclear: toShare(nuclear),
-    fossil,
-    otherRenewables: otherRen,
-    other: Math.max(0, 1 - (toShare(solar) + toShare(wind) + toShare(hydro) + toShare(nuclear) + fossil + otherRen)),
-  };
-}
 
 export default function USInteractiveMap() {
   const { ref, width, height } = useSize<HTMLDivElement>();
@@ -600,11 +552,7 @@ export default function USInteractiveMap() {
   }, [selectedId, selectedStateName, stateDataMap]);
 
   // Optional baseline mix shares
-  const baselineMix: BaselineMix | null = useMemo(() => {
-    if (!selectedId || !selectedStateName || selectedStateName === "—") return null;
-    const row = fuelMixMap[normalizeStateName(selectedStateName)];
-    return computeBaselineMix(row);
-  }, [selectedId, selectedStateName, fuelMixMap]);
+
 
   // ---------- FULLSCREEN LIGHTBOX ----------
   const [lightboxOpen, setLightboxOpen] = useState(false);
